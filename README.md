@@ -2,8 +2,8 @@ Database Log Plugin for CakePHP
 ===============================
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.txt) 
-[![Build Status](https://img.shields.io/travis/burzum/cakephp-database-log/3.0.svg?style=flat-square)](https://travis-ci.org/burzum/cakephp-database-log) 
-[![Coverage Status](https://img.shields.io/coveralls/burzum/cakephp-database-log/3.0.svg?style=flat-square)](https://coveralls.io/r/burzum/cakephp-database-log)
+[![Build Status](https://img.shields.io/travis/burzum/cakephp-database-log/master.svg?style=flat-square)](https://travis-ci.org/burzum/cakephp-database-log) 
+[![Coverage Status](https://img.shields.io/coveralls/burzum/cakephp-database-log/master.svg?style=flat-square)](https://coveralls.io/r/burzum/cakephp-database-log)
 
 Requirements
 ------------
