@@ -51,13 +51,22 @@ class LogsTable extends Table
         return $validator;
     }
 
-	public function log($level, $message, array $context = [])
-	{
-		$entity = $this->newEntity([
-			'level' => $level,
-			'message' => is_string($message) ? $message : serialize($message),
-			'context' => serialize($context)
-		]);
-		$this->save($entity);
-	}
+    /**
+     * Log
+     *
+     * @param string $level
+     * @param mixed $message
+     * @param array $context
+     * @return \Cake\ORM\Entity
+     */
+    public function log($level, $message, array $context = [])
+    {
+        $entity = $this->newEntity([
+            'level' => $level,
+            'message' => is_string($message) ? $message : print_r($message, true),
+            'context' => is_string($context) ? $context : print_r($context, true),
+        ]);
+        $this->save($entity);
+        return $entity;
+    }
 }

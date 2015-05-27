@@ -40,27 +40,18 @@ class LogsTableTest extends TestCase
     public function tearDown()
     {
         unset($this->Logs);
-
         parent::tearDown();
     }
 
     /**
-     * Test initialize method
+     * testLog
      *
      * @return void
      */
-    public function testInitialize()
+    public function testLog()
     {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test validationDefault method
-     *
-     * @return void
-     */
-    public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
+        $result = $this->Logs->log('warning', 'testing');
+        $this->assertEquals($result->level, 'warning');
+        $this->assertEquals($result->message, 'testing');
     }
 }

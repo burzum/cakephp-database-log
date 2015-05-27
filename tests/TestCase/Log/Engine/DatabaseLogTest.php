@@ -2,6 +2,7 @@
 namespace Burzum\DatabaseLog\Test\TestCase\Model\Table;
 
 use Burzum\DatabaseLog\Log\Engine\DatabaseLog;
+use Cake\Log\Log;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
@@ -40,27 +41,27 @@ class DatabaseLogTest extends TestCase
     public function tearDown()
     {
         unset($this->Logs);
-
         parent::tearDown();
     }
 
     /**
-     * Test initialize method
+     * testLogging
      *
      * @return void
      */
-    public function testInitialize()
+    public function testLogging()
     {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
+        Log::config('dblogtest', [
+            'className' => 'Burzum\DatabaseLog\Log\Engine\DatabaseLog',
+            //'path' => LOGS,
+            'levels' => ['warning', 'error', 'critical', 'alert', 'emergency'],
+            //'file' => 'error',
+        ]);
 
-    /**
-     * Test validationDefault method
-     *
-     * @return void
-     */
-    public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
+        Log::write('warning', 'testing');
+        $result = $this->Logs->find()->first();
+        $this->assertEquals($result->level, 'warning');
+        $this->assertEquals($result->message, 'testing');
+        $this->Logs->deleteAll([]);
     }
 }
