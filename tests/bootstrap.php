@@ -20,14 +20,14 @@ if (file_exists($root . '/config/bootstrap.php')) {
 	//return;
 }
 
-Plugin::load('Burzum/FileStorage', [
-	'path' => dirname(dirname(__FILE__)) . DS,
-	'autoload' => true,
-	'bootstrap' => true
-]);
+require $root . '/vendor/cakephp/cakephp/tests/bootstrap.php';
+$loader = require $root . '/vendor/autoload.php';
 
-Plugin::load('Burzum/Imagine', [
+$loader->setPsr4('Cake\\', './vendor/cakephp/cakephp/src');
+$loader->setPsr4('Cake\Test\\', './vendor/cakephp/cakephp/tests');
+
+Plugin::load('Burzum/DatabaseLog', [
 	'path' => dirname(dirname(__FILE__)) . DS,
 	'autoload' => true,
-	'bootstrap' => true
+	'bootstrap' => false
 ]);
