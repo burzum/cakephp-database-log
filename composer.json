@@ -1,0 +1,38 @@
+{
+	"name": "burzum/cakephp-database-log",
+	"type": "cakephp-plugin",
+	"description": "Database logging adapter for CakePHP",
+	"keywords": ["log", "logging", "database"],
+	"homepage": "http://github.com/burzum/cakephp-database-log",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Florian Krämer",
+			"homepage": "http://florian-kraemer.net"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"php": ">=5.4.19",
+		"cakephp/cakephp": "~3.0",
+		"cakephp/migrations": "~1.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"Burzum\\DatabaseLog\\": "src",
+			"Burzum\\DatabaseLog\\Test\\Fixture\\": "tests\\Fixture"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Cake\\Test\\": "/vendor/cakephp/cakephp/tests",
+			"Burzum\\DatabaseLog\\Test\\": "tests"
+		}
+	},
+	"scripts": {
+		"post-autoload-dump": "Cake\\Composer\\Installer\\PluginInstaller::postAutoloadDump"
+	}
+}
