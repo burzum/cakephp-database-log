@@ -23,7 +23,6 @@ Configure the log engine in your `app.php`, pay attention to the `className` key
 			'levels' => ['notice', 'info', 'debug'],
 		],
 		'error' => [
-			//'className' => 'Cake\Log\Engine\FileLog',
 			'className' => 'Burzum/DatabaseLog.Database',
 			'path' => LOGS,
 			'file' => 'error',
