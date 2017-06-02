@@ -33,7 +33,7 @@ class ElasticLog extends BaseLog
             return;
         }
 
-        $this->Model->newEntity(compact('level', 'message', 'context'));
-        $this->Model->save($level, $message, $context);
+        $entity = $this->Model->newEntity(compact('level', 'message', 'context'));
+        $this->Model->save($entity);
     }
 }
