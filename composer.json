@@ -14,11 +14,12 @@
 	"minimum-stability": "dev",
 	"require": {
 		"cakephp/plugin-installer": "*",
-		"cakephp/cakephp": "3.*"
+		"cakephp/cakephp": "^3.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*",
-		"cakephp/migrations": "~1.0"
+		"cakephp/migrations": "~1.0",
+		"cakephp/cakephp-codesniffer": "^2.0"
 	},
 	"autoload": {
 		"psr-4": {

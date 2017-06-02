@@ -38,13 +38,13 @@ class LogsTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'uuid'])
             ->allowEmpty('id', 'create');
-            
+
         $validator
             ->allowEmpty('message');
-            
+
         $validator
             ->allowEmpty('level');
-            
+
         $validator
             ->allowEmpty('context');
 
@@ -67,6 +67,7 @@ class LogsTable extends Table
             'context' => is_string($context) ? $context : print_r($context, true),
         ]);
         $this->save($entity);
+
         return $entity;
     }
 }
