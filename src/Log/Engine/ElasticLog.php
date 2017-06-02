@@ -2,6 +2,7 @@
 namespace Burzum\DatabaseLog\Log\Engine;
 
 use Cake\Core\Exception\MissingPluginException;
+use Cake\Core\Plugin;
 use Cake\ElasticSearch\TypeRegistry;
 use Cake\Log\Engine\BaseLog;
 use Cake\ORM\TableRegistry;
